@@ -8,7 +8,7 @@ from config import CHROMA_PERSIST_DIR, CHROMA_COLLECTION_NAME, EMBEDDING_MODEL_N
 embedder = SentenceTransformer(EMBEDDING_MODEL_NAME)
 
 #Initialisation du client ChromaDB et récupération de la collection
-client = chromadb.Client(Settings(chroma_db_impl="duckdb+parquet", persist_directory=CHROMA_PERSIST_DIR))
+client = chromadb.Client(persist_directory=CHROMA_PERSIST_DIR)
 collection = client.get_or_create_collection(CHROMA_COLLECTION_NAME)
 
 def retrieve_context(query, n_results=1):

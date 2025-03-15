@@ -29,7 +29,7 @@ def update_vector_store():
     embedder = SentenceTransformer(EMBEDDING_MODEL_NAME)
 
     #Initialisation du client ChromaDB
-    client = chromadb.Client(Settings(chroma_db_impl="duckdb+parquet", persist_directory=CHROMA_PERSIST_DIR))
+    client = chromadb.Client(persist_directory=CHROMA_PERSIST_DIR)
     collection = client.get_or_create_collection(CHROMA_COLLECTION_NAME)
 
     #Chargement des rapports financiers
