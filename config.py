@@ -1,13 +1,4 @@
-import os
-
-HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY")
-
-if HUGGINGFACE_API_KEY:
-    print("API key retrieved successfully!")
-else:
-    print("API key not found. Make sure it's set in your environment.")
-
-HUGGINGFACE_MODEL_NAME = "bigscience/bloom-560m"
+HUGGINGFACE_MODEL_NAME = "tiiuae/Falcon3-1B-Base"
 
 CHROMA_PERSIST_DIR = "./chroma_db"
 
